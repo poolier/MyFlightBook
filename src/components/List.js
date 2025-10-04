@@ -28,7 +28,7 @@ function List() {
         }
 
         try {
-            const response = await axios.get(`https://lolprostat.com:8088/Flight/flightStat?token=${userToken}`);
+            const response = await axios.get(`https://api.flight.lolprostat.com/flightStat?token=${userToken}`);
             console.log("User flights fetched successfully:", response.data.flights);
             return response.data.flights;
         } catch (error) {
@@ -40,7 +40,7 @@ function List() {
 
     const fetchAirports = async () => {
         try {
-            const response = await axios.get("https://lolprostat.com:8088/Flight/airports");
+            const response = await axios.get("https://api.flight.lolprostat.com/airports");
             setAirports(response.data.airports);
             console.log("Airports fetched successfully:", response.data.airports);
             return true;

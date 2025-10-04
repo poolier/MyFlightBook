@@ -33,7 +33,7 @@ function Home() {
     if (!userToken) return;
 
     try {
-      const response = await axios.get(`https://lolprostat.com:8088/Flight/user-flights?token=${userToken}`);
+      const response = await axios.get(`https://api.flight.lolprostat.com/user-flights?token=${userToken}`);
       setUserFlights(response.data.flights);
       console.log("User flights fetched successfully:", response.data.flights);
     } catch (error) {
@@ -44,7 +44,7 @@ function Home() {
   useEffect(() => {
     const fetchAirports = async () => {
       try {
-        const response = await axios.get("https://lolprostat.com:8088/Flight/airports");
+        const response = await axios.get("https://api.flight.lolprostat.com/airports");
         setAirports(response.data.airports);
         console.log("Airports fetched successfully:", response.data.airports);
       } catch (error) {
@@ -56,7 +56,7 @@ function Home() {
       const userToken = localStorage.getItem('token');
       if (!userToken) return;
       try {
-        const response = await axios.get(`https://lolprostat.com:8088/Flight/friendList?token=${userToken}`);
+        const response = await axios.get(`https://api.flight.lolprostat.com/friendList?token=${userToken}`);
         setFriendlist(response.data.flights);
         console.log("Liste d'amis:", response.data.flights);
       } catch (error) {
@@ -208,7 +208,7 @@ function Home() {
     };
 
     try {
-      const response = await axios.post("https://lolprostat.com:8088/Flight/flights", formData);
+      const response = await axios.post("https://api.flight.lolprostat.com/flights", formData);
       console.log("Flight added successfully:", response.data);
 
       await fetchUserFlights();
@@ -263,7 +263,7 @@ function Home() {
     if (!userToken) return;
 
     try {
-      const response = await axios.get(`https://lolprostat.com:8088/Flight/flightFriend?token=${userToken}&email_two=${friendEmail}`);
+      const response = await axios.get(`https://api.flight.lolprostat.com/flightFriend?token=${userToken}&email_two=${friendEmail}`);
       const friendFlights = response.data.flights;
       console.log("Friend flights fetched successfully:", friendFlights);
 

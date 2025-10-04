@@ -26,7 +26,7 @@ function Insc() {
     setError("");
 
     try {
-      const response = await axios.post("https://lolprostat.com:8088/Flight/create", {
+      const response = await axios.post("https://api.flight.lolprostat.com/create", {
         email: formData.email,
         password: formData.password,
         username: formData.name,

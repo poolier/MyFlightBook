@@ -24,7 +24,7 @@ function Conn() {
     setError("");
 
     try {
-      const response = await axios.post("https://lolprostat.com:8088/Flight/login", {
+      const response = await axios.post("https://api.flight.lolprostat.com/login", {
         email: formData.email,
         password: formData.password
       });

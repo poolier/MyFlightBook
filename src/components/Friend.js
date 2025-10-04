@@ -14,7 +14,7 @@ function Friend() {
             const userToken = localStorage.getItem('token');
             if (!userToken) return;
             try {
-                const response = await axios.get(`https://lolprostat.com:8088/Flight/friendRequestList?token=${userToken}`);
+                const response = await axios.get(`https://api.flight.lolprostat.com/friendRequestList?token=${userToken}`);
                 setFriendlistRequest(response.data.flights);
                 console.log("Friend requests list:", response.data.flights);
             } catch (error) {
@@ -26,7 +26,7 @@ function Friend() {
             const userToken = localStorage.getItem('token');
             if (!userToken) return;
             try {
-                const response = await axios.get(`https://lolprostat.com:8088/Flight/friendList?token=${userToken}`);
+                const response = await axios.get(`https://api.flight.lolprostat.com/friendList?token=${userToken}`);
                 setFriendlist(response.data.flights);
                 console.log("Friends list:", response.data.flights);
             } catch (error) {
@@ -50,7 +50,7 @@ function Friend() {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.post('https://lolprostat.com:8088/Flight/friendRequest', {
+            const response = await axios.post('https://api.flight.lolprostat.com/friendRequest', {
                 token: token,
                 emailReceveur: friendEmail
             }, {
@@ -68,7 +68,7 @@ function Friend() {
     const handleAccept = async (emailDemandeur) => {
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.post('https://lolprostat.com:8088/Flight/friendRequestAccept', {
+            const response = await axios.post('https://api.flight.lolprostat.com/friendRequestAccept', {
                 token: token,
                 emailReceveur: emailDemandeur
             }, {
