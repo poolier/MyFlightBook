@@ -31,7 +31,7 @@ function HomeMini() {
     
 
     try {
-      const response = await axios.get(`https://lolprostat.com:8088/Flight/user-flightsDemo?email=test@test.test`);
+      const response = await axios.get(`https://api.flight.lolprostat.com/user-flightsDemo?email=test@test.test`);
       setUserFlights(response.data.flights);
       console.log("User flights fetched successfully:", response.data.flights);
     } catch (error) {
@@ -42,7 +42,7 @@ function HomeMini() {
   useEffect(() => {
     const fetchAirports = async () => {
       try {
-        const response = await axios.get("https://lolprostat.com:8088/Flight/airports");
+        const response = await axios.get("https://api.flight.lolprostat.com/airports");
         setAirports(response.data.airports);
         console.log("Airports fetched successfully:", response.data.airports);
       } catch (error) {
@@ -54,7 +54,7 @@ function HomeMini() {
       const email = localStorage.getItem('demo');
       if (!email) return;
       try {
-        const response = await axios.get(`https://lolprostat.com:8088/Flight/friendListDemo?email=test@test.test`);
+        const response = await axios.get(`https://api.flight.lolprostat.com/friendListDemo?email=test@test.test`);
         setFriendlist(response.data.flights);
         console.log("Liste d'amis:", response.data.flights);
       } catch (error) {

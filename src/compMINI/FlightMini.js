@@ -24,7 +24,7 @@ function FlightMini() {
         
 
         try {
-            const response = await axios.get(`https://lolprostat.com:8088/Flight/flightStatDemo?email=test@test.test`);
+            const response = await axios.get(`https://api.flight.lolprostat.com/flightStatDemo?email=test@test.test`);
             console.log("User flights fetched successfully:", response.data.flights);
             return response.data.flights;
         } catch (error) {
@@ -36,7 +36,7 @@ function FlightMini() {
 
     const fetchAirports = async () => {
         try {
-            const response = await axios.get("https://lolprostat.com:8088/Flight/airports");
+            const response = await axios.get("https://api.flight.lolprostat.com/airports");
             setAirports(response.data.airports);
             console.log("Airports fetched successfully:", response.data.airports);
             return true;
