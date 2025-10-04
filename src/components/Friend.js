@@ -15,8 +15,8 @@ function Friend() {
             if (!userToken) return;
             try {
                 const response = await axios.get(`https://api.flight.lolprostat.com/friendRequestList?token=${userToken}`);
-                setFriendlistRequest(response.data.flights);
-                console.log("Friend requests list:", response.data.flights);
+                setFriendlistRequest(response.data.requests);
+                console.log("Friend requests list:", response.data.requests);
             } catch (error) {
                 console.error("Error fetching airports:", error);
             }
@@ -27,8 +27,8 @@ function Friend() {
             if (!userToken) return;
             try {
                 const response = await axios.get(`https://api.flight.lolprostat.com/friendList?token=${userToken}`);
-                setFriendlist(response.data.flights);
-                console.log("Friends list:", response.data.flights);
+                setFriendlist(response.data.friends);
+                console.log("Friends list:", response.data.friends);
             } catch (error) {
                 console.error("Error fetching airports:", error);
             }

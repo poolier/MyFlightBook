@@ -57,8 +57,8 @@ function Home() {
       if (!userToken) return;
       try {
         const response = await axios.get(`https://api.flight.lolprostat.com/friendList?token=${userToken}`);
-        setFriendlist(response.data.flights);
-        console.log("Liste d'amis:", response.data.flights);
+        setFriendlist(response.data.friends);
+        console.log("Liste d'amis:", response.data.friends);
       } catch (error) {
         console.error("Error fetching airports:", error);
       }
