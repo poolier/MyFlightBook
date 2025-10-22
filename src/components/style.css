@@ -1921,6 +1921,203 @@ select {
     transform: translate(-50%);
 }
 
+/* Flight Filters Styles */
+
+.flight-filters {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 80vh;
+  width: 100%;
+}
+
+.filters-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  /* margin-bottom: 1rem; */
+}
+
+.filters-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.filters-badge {
+  background-color: #0f172a;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.filters-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+/* Scrollbar styling */
+.filters-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.filters-content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.filters-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.filters-content::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.filter-section {
+  margin-bottom: 1.5rem;
+}
+
+.filter-section-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #0f172a;
+}
+
+/* Date Range */
+.filter-date-range {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.filter-date-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Airports */
+.filter-airports {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.filter-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-input{
+  display: flex;
+  height: 2.5rem; 
+  border-radius: 0.375rem; 
+  border: 1px solid #d1d5db; 
+  background-color: #f9fafb; 
+  padding-left: 0.75rem;
+  font-size: "0.875rem";
+  color: #111827;
+}
+
+.filter-input::placeholder {
+  color: #9ca3af; /* placeholder:text-muted-foreground → gris moyen */
+}
+
+.filter-calendar-button{
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: left; 
+  gap: 0.5rem; 
+  white-space: nowrap; 
+  height: 2.5rem; 
+  padding: 0.5rem 1rem; 
+  border-radius: 0.375rem; 
+  font-size: 0.875rem; 
+  font-weight: 500; 
+  border: 1px solid #d1d5db; 
+  background-color: #f9fafb; 
+  color: #111827; 
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease; 
+}
+
+.filter-calendar-button:hover {
+  background-color: #e5e7eb; /* hover:bg-accent → gris plus foncé */
+  color: #111827; /* hover:text-accent-foreground */
+}
+
+.filter-calendar-button {
+  color: #9ca3af; /* gris clair */
+}
+
+.filter-calendar-button svg {
+  pointer-events: none; /* [&_svg]:pointer-events-none */
+  width: 1rem; /* [&_svg]:size-4 */
+  height: 1rem;
+  flex-shrink: 0; /* [&_svg]:shrink-0 */
+}
+
+/* Checkbox Groups */
+.filter-checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.filter-checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-checkbox-label {
+  font-size: 0.875rem;
+  font-weight: normal;
+  cursor: pointer;
+  margin: 0;
+}
+
+/* Duration */
+.filter-duration {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Actions */
+.filters-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 1rem;
+}
+
+.filter-reset-button,
+.filter-apply-button {
+  flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .filter-date-range,
+  .filter-airports,
+  .filter-duration {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 
 @media only screen and (max-width: 480px) {
     .navbar-logo {
